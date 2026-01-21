@@ -4,7 +4,7 @@ def Game_logic():
     count = 0
     number = random.randint(1, 10)
     guess = None
-    print("You only have 3 chances")
+    print("You have 3 chances to guess the number")
     while guess != number and count < 3:
         try:
             guess = int(input("Guess a number between 1 and 10: "))
@@ -18,7 +18,8 @@ def Game_logic():
             print("Your guess is greater than the number")
         else:
             print("Congratulations! You guessed it!")
-        print(f"You have {3 - count} chances left")
+        if(3-count)>0:
+            print(f"You have {3 - count} chances left")
     if guess != number:
         print("You ran out of chances :(")
         print(f"The number was {number}")
